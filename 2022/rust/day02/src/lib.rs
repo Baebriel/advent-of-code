@@ -12,7 +12,7 @@ pub fn process_part1(input: &str) -> String {
                 "C X" => 7, // scissors + rock, win = 6, rock = 1
                 "C Y" => 2, // scissors + paper, loss = 0, paper = 2
                 "C Z" => 6, // scissors + scissors, draw = 3, scissors = 3
-                &_ => todo!(),
+                &_ => 0,
             }
         })
         .sum::<u32>();
