@@ -1,3 +1,5 @@
+// Reference: https://github.com/ChristopherBiscardi/advent-of-code/tree/main/2022/rust/day-01
+
 pub fn process_part1(input: &str) -> String {
     let result = input
         .split("\n\n")
