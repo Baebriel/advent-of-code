@@ -1,4 +1,4 @@
-use std::{collections::HashSet, hash::Hash};
+use std::collections::HashSet;
 use itertools::Itertools;
 
 pub fn process_part1(input: &str) -> u32 {
