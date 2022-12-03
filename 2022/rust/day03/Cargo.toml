@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 cargo-watch = "8.1.2"
+itertools = "0.10.5"

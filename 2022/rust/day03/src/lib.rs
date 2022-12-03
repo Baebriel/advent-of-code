@@ -1,4 +1,5 @@
-use std::collections::HashSet;
+use std::{collections::HashSet, hash::Hash};
+use itertools::Itertools;
 
 pub fn process_part1(input: &str) -> u32 {
 
@@ -35,9 +36,44 @@ pub fn process_part2(input: &str) -> u32 {
 
     let mut sum = 0;
 
-    let lines = input.lines();
+    for mut group in &input.lines().chunks(3) {
 
-    0
+        let mut set1: HashSet<char> = HashSet::new();
+        let mut set2: HashSet<char> = HashSet::new();
+        let mut set3: HashSet<char> = HashSet::new();
+
+        let line = group.next().unwrap();
+
+        for char in line.chars() {
+            set1.insert(char);
+        }
+
+        let line = group.next().unwrap();
+
+        for char in line.chars() {
+            set2.insert(char);
+        }
+
+        let line = group.next().unwrap();
+
+        for char in line.chars() {
+            set3.insert(char);
+        }
+
+        let set4 = set3.iter().map(|char| char).collect::<HashSet<&char>>();
+
+        let common_char1 = set1.intersection(&set2).collect::<HashSet<&char>>();
+        let mut common_char2 = common_char1.intersection(&set4);
+
+        let common_char = common_char2.next().unwrap();
+
+        if (**common_char as u32) < 91 {
+            sum += **common_char as u32 - 38;
+        } else {
+            sum += **common_char as u32 - 96;
+        }
+    }
+    sum
 }
 
 #[cfg(test)]
