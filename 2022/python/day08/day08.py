@@ -1,5 +1,4 @@
 import numpy as np
-import contextlib
 import pytest
 
 def process_part1(map):
@@ -103,9 +102,5 @@ if __name__ == '__main__':
 
     input = np.genfromtxt('input.txt', delimiter=1)
 
-    with contextlib.redirect_stdout(None):
-        part1 = process_part1(input)
-        part2 = process_part2(input)
-
-    print(f'Part 1: {part1}')
-    print(f'Part 2: {part2}')
+    print(f'Part 1: {process_part1(input)}')
+    print(f'Part 2: {process_part2(input)}')
