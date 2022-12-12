@@ -1,5 +1,5 @@
 import pytest
-from anytree import Node, RenderTree, PostOrderIter
+from anytree import Node, PostOrderIter
 
 
 def init_tree(input):
