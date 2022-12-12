@@ -93,6 +93,7 @@ class TestExamples:
             example_output = f.read()
         assert process_part2(example_input) == example_output
 
+
 if __name__ == '__main__':
 
     with open('./input.txt') as f:
